@@ -17,13 +17,13 @@ Digital audio workstation plugins - filters that musicians use to change how the
 
 input | output | notes 
 - based on user sticking with defaults
-[40, 1000] | [40, 1000] | everything within bounds
++ [40, 1000] | [40, 1000] | everything within bounds
 [30, 1000] | [40, 1000] | test lower bound works
 [-5, 1000] | [40, 1000] | test that method can handle negative numbers
 [40, 2000] | [40, 1000] | test upper bound works
 [30, 2000] | [40, 1000] | both are outside bounds
 [30, 2000, 15000, 10] | [40, 1000, 1000, 40] | multiple things to change
-- user chooses a min of 10 and a max of 100
+- user chooses a min of 10 and a max of 100 (supplied as arguments)
 [10, 100] | [10, 100] | everything within bounds
 [5, 105] | [10, 100] | both outside bounds
 - edge cases
