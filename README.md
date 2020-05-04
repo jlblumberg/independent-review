@@ -1,33 +1,15 @@
-Band pass filter
+# Developer Process Review
 
-Digital audio workstation plugins - filters that musicians use to change how their track sounds. Want me to write a band pass filter
+An independent, third party review of my developer process. Conducted by [CoGrammar](https://www.cogrammar.com/). 
 
-- input and output are both arrays of integers
-- in addition to the integers, you get two values.
-- anything that falls outside of these bounds gets reset to the bound.
-- no floats
-- bounds are user supplied
-   - default values should be 40, and 1000
-- edge cases:
-- Could be passed an empty array 
-  - want en error which says "no frequencies recieved"
-- Array could contain nil
-  - want an error which says "corrupted input"
-- both bounds will be appropriate
+### Summary
 
-input | output | notes 
-- based on user sticking with defaults
-+ [40, 1000] | [40, 1000] | everything within bounds
-[30, 1000] | [40, 1000] | test lower bound works
-[-5, 1000] | [40, 1000] | test that method can handle negative numbers
-[40, 2000] | [40, 1000] | test upper bound works
-[30, 2000] | [40, 1000] | both are outside bounds
-[30, 2000, 15000, 10] | [40, 1000, 1000, 40] | multiple things to change
-- user chooses a min of 10 and a max of 100 (supplied as arguments)
-[10, 100] | [10, 100] | everything within bounds
-[5, 105] | [10, 100] | both outside bounds
-- edge cases
-[] | Error: "no frequencies recieved"
-[100, nil, 200, 300] | Error: "corrupted input"
+Similar to what one might experience in a tech test, this was an assessment of my process in solving a novel problem. The reviewer role-played a product owner with a set of non-technical requirements, and I used my developer process to convert these requirements into a working, tested, well-written application.
 
+### Deliverables
 
+In discussing the brief, I fleshed out the specifications, problem context, and potential edge cases. I then used an input-output diagram to plan my solution and prevent myself from over-engineering. You can see my raw notes from the planning stage [here](supporting_files/planning_notes.md).
+
+After planning, I started test-driving the solution. You can see this in the commit history of this repository. 
+
+After completing the assessment, the reviewer left me feedback on my developer process. You can see the feedback [here](supporting_files/2020-03-12-Blue-Clefable-59-feedback.pdf). You can also find a live recording of the session [here](https://www.youtube.com/watch?v=e0F0e1YhXT4).
